@@ -1,0 +1,1 @@
+robocopy /e "%cd%" "%temp%"

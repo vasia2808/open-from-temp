@@ -1,0 +1,6 @@
+initTempDirectory
+deleteDirectory
+copyDirectory
+changeCurrentDirectoryPath
+openFile
+restoreCurrentDirectoryPath
