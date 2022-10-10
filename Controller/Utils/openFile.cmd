@@ -1,1 +1,1 @@
-start /i "%fileName%"
+start /i "%file%" "%fileName%"
