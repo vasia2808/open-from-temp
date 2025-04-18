@@ -1,8 +1,10 @@
 @echo off
 
-set TEMPDIR=%TEMP%\%~n0
-set EXE=%TEMPDIR%\%~nx1
+set EXE=%1
 set ARGS=%2
+for %%F in ("%EXE%") do set "EXE_DIR_NAME=%%~nF"
+set TEMPDIR=%TEMP%\%~n0\%EXE_DIR_NAME%
+set TEMP_EXE=%TEMPDIR%\%~nx1
 
 call :begin
 call :end
@@ -12,7 +14,7 @@ exit %ERRORLEVEL%
 :echo_on
 setlocal
 echo on
-@call "%EXE%" "%ARGS%"
+@call "%TEMP_EXE%" "%ARGS%"
 @echo off
 exit /b %ERRORLEVEL%
 
