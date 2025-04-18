@@ -1,1 +1,0 @@
-set callOrder=%~dp0call.order
