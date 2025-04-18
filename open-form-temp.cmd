@@ -4,7 +4,9 @@ set TEMPDIR=%TEMP%\%~n0
 set EXE=%TEMPDIR%\%~nx1
 set ARGS=%2
 
-goto begin
+call :begin
+call :end
+exit %ERRORLEVEL%
 
 
 :echo_on
@@ -54,6 +56,8 @@ exit /b %ERRORLEVEL%
 setlocal
 call :copy_to_temp_dir
 call :check_errors %ERRORLEVEL%
+exit /b %ERRORLEVEL%
 
 :end
 pause
+exit /b %ERRORLEVEL%
